@@ -1,7 +1,7 @@
-package by.epam.sedkov.day5.service.impl;
+package by.epam.sedkov.task5.service.impl;
 
-import by.epam.sedkov.day5.exception.TextException;
-import by.epam.sedkov.day5.service.ReplacementCharacterService;
+import by.epam.sedkov.task5.exception.TextException;
+import by.epam.sedkov.task5.service.ReplacementCharacterService;
 
 public class CharReplacementCharacterServiceImpl implements ReplacementCharacterService {
 
@@ -51,10 +51,10 @@ public class CharReplacementCharacterServiceImpl implements ReplacementCharacter
     }
 
     @Override
-    public String replaceWordForSubstring(String text, int wordSize, int indexStartSubstring, int indexEndSubstring) throws TextException {
+    public String replaceWordWithSubstring(String text, int wordSize, int indexStartSubstring, int indexEndSubstring) throws TextException {
         if (text == null || wordSize < 0
-                || indexStartSubstring < 0 || indexStartSubstring > text.length()
-                || indexEndSubstring < 0 || indexEndSubstring > text.length()
+                || indexStartSubstring < 0 || indexStartSubstring >= text.length()
+                || indexEndSubstring < 0 || indexEndSubstring >= text.length()
                 || indexStartSubstring >= indexEndSubstring) {
             throw new TextException("Wrong arguments.");
         }

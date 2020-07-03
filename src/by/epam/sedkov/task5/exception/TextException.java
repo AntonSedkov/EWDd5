@@ -1,6 +1,7 @@
-package by.epam.sedkov.day5.exception;
+package by.epam.sedkov.task5.exception;
 
 public class TextException extends Exception {
+
     public TextException() {
         super();
     }
@@ -16,4 +17,5 @@ public class TextException extends Exception {
     public TextException(Throwable cause) {
         super(cause);
     }
+
 }

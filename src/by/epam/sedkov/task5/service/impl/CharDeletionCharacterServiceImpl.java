@@ -1,15 +1,15 @@
-package by.epam.sedkov.day5.service.impl;
+package by.epam.sedkov.task5.service.impl;
 
-import by.epam.sedkov.day5.exception.TextException;
-import by.epam.sedkov.day5.service.DeletionCharacterService;
+import by.epam.sedkov.task5.exception.TextException;
+import by.epam.sedkov.task5.service.DeletionCharacterService;
 
 public class CharDeletionCharacterServiceImpl implements DeletionCharacterService {
 
     private static final String VOWELS = "AaEeIiOoYyАаЕеЁёИиОоУуЫыЭэЮюЯя";
 
     @Override
-    public String deletePunctuation(String text, String sub) throws TextException {
-        if (text == null || sub == null) {
+    public String deletePunctuation(String text) throws TextException {
+        if (text == null) {
             throw new TextException("Wrong arguments.");
         }
         char[] textChar = text.toCharArray();
@@ -23,7 +23,7 @@ public class CharDeletionCharacterServiceImpl implements DeletionCharacterServic
     }
 
     @Override
-    public String deleteDefineSizeWord(String text, int wordSize) throws TextException {
+    public String deleteDefineSizeWordWithFirstConsonant(String text, int wordSize) throws TextException {
         if (text == null || wordSize < 1) {
             throw new TextException("Wrong arguments.");
         }
